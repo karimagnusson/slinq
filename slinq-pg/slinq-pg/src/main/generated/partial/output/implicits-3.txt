@@ -1,0 +1,33 @@
+
+  // create model col
+
+  given kzStringCol: Conversion[ColInfo, TypeCol[String]] = (x: ColInfo) => StringModelCol(x)
+  given kzBooleanCol: Conversion[ColInfo, TypeCol[Boolean]] = (x: ColInfo) => BooleanModelCol(x)
+  given kzShortCol: Conversion[ColInfo, TypeCol[Short]] = (x: ColInfo) => ShortModelCol(x)
+  given kzIntCol: Conversion[ColInfo, TypeCol[Int]] = (x: ColInfo) => IntModelCol(x)
+  given kzLongCol: Conversion[ColInfo, TypeCol[Long]] = (x: ColInfo) => LongModelCol(x)
+  given kzFloatCol: Conversion[ColInfo, TypeCol[Float]] = (x: ColInfo) => FloatModelCol(x)
+  given kzDoubleCol: Conversion[ColInfo, TypeCol[Double]] = (x: ColInfo) => DoubleModelCol(x)
+  given kzBigDecimalCol: Conversion[ColInfo, TypeCol[BigDecimal]] = (x: ColInfo) => BigDecimalModelCol(x)
+  given kzTimeCol: Conversion[ColInfo, TypeCol[Time]] = (x: ColInfo) => TimeModelCol(x)
+  given kzDateCol: Conversion[ColInfo, TypeCol[Date]] = (x: ColInfo) => DateModelCol(x)
+  given kzTimestampCol: Conversion[ColInfo, TypeCol[Timestamp]] = (x: ColInfo) => TimestampModelCol(x)
+  given kzJsonbCol: Conversion[ColInfo, TypeCol[Jsonb]] = (x: ColInfo) => JsonbModelCol(x)
+  given kzUUIDCol: Conversion[ColInfo, TypeCol[UUID]] = (x: ColInfo) => UUIDModelCol(x)
+
+  given kzStringSeqCol: Conversion[ColInfo, TypeCol[Seq[String]]] = (x: ColInfo) => StringSeqModelCol(x)
+  given kzBooleanSeqCol: Conversion[ColInfo, TypeCol[Seq[Boolean]]] = (x: ColInfo) => BooleanSeqModelCol(x)
+  given kzShortSeqCol: Conversion[ColInfo, TypeCol[Seq[Short]]] = (x: ColInfo) => ShortSeqModelCol(x)
+  given kzIntSeqCol: Conversion[ColInfo, TypeCol[Seq[Int]]] = (x: ColInfo) => IntSeqModelCol(x)
+  given kzLongSeqCol: Conversion[ColInfo, TypeCol[Seq[Long]]] = (x: ColInfo) => LongSeqModelCol(x)
+  given kzFloatSeqCol: Conversion[ColInfo, TypeCol[Seq[Float]]] = (x: ColInfo) => FloatSeqModelCol(x)
+  given kzDoubleSeqCol: Conversion[ColInfo, TypeCol[Seq[Double]]] = (x: ColInfo) => DoubleSeqModelCol(x)
+  given kzBigDecimalSeqCol: Conversion[ColInfo, TypeCol[Seq[BigDecimal]]] = (x: ColInfo) => BigDecimalSeqModelCol(x)
+  given kzTimeSeqCol: Conversion[ColInfo, TypeCol[Seq[Time]]] = (x: ColInfo) => TimeSeqModelCol(x)
+  given kzDateSeqCol: Conversion[ColInfo, TypeCol[Seq[Date]]] = (x: ColInfo) => DateSeqModelCol(x)
+  given kzTimestampSeqCol: Conversion[ColInfo, TypeCol[Seq[Timestamp]]] = (x: ColInfo) => TimestampSeqModelCol(x)
+  given kzJsonbSeqCol: Conversion[ColInfo, TypeCol[Seq[Jsonb]]] = (x: ColInfo) => JsonbSeqModelCol(x)
+
+  // filters
+
+

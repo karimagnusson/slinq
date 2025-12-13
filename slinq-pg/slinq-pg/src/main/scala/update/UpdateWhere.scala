@@ -1,0 +1,75 @@
+/*
+* Copyright 2021 Kári Magnússon
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+package slinq.pg.update
+
+import slinq.pg.api.SlinqError
+import slinq.pg.section.WhereSec
+import slinq.pg.render.SectionCollector
+import slinq.pg.filter.Filter
+
+
+class UpdateWhere[M](
+  model: M,
+  coll: SectionCollector
+) {
+
+  def all = new RenderUpdate(model, coll)
+
+  def where(pick: M => Seq[Filter]) = {
+    pick(model) match {
+      case Nil =>
+        throw SlinqError("WHERE conditions cannot be empty")
+      case conds =>
+        new RenderUpdate(
+          model,
+          coll.add(WhereSec(conds.toVector))
+        )
+    }
+  }
+
+  def whereOpt(pick: M => Seq[Option[Filter]]) = {
+    pick(model).flatten match {
+      case Nil =>
+        new RenderUpdate(model, coll)
+      case filters =>
+        new RenderUpdate(
+          model,
+          coll.add(
+            WhereSec(filters.toVector)
+          )
+        )
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

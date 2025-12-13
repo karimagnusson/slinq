@@ -1,0 +1,170 @@
+trait StringFn extends StringCol with CustomFn
+trait BooleanFn extends BooleanCol with CustomFn
+trait ShortFn extends ShortCol with CustomFn
+trait IntFn extends IntCol with CustomFn
+trait LongFn extends LongCol with CustomFn
+trait FloatFn extends FloatCol with CustomFn
+trait DoubleFn extends DoubleCol with CustomFn
+trait BigDecimalFn extends BigDecimalCol with CustomFn
+trait TimeFn extends TimeCol with CustomFn
+trait DateFn extends DateCol with CustomFn
+trait TimestampFn extends TimestampCol with CustomFn
+trait JsonbFn extends JsonbCol with CustomFn
+trait UUIDFn extends UUIDCol with CustomFn
+trait StringSeqFn extends StringSeqCol with CustomFn
+trait BooleanSeqFn extends BooleanSeqCol with CustomFn
+trait ShortSeqFn extends ShortSeqCol with CustomFn
+trait IntSeqFn extends IntSeqCol with CustomFn
+trait LongSeqFn extends LongSeqCol with CustomFn
+trait FloatSeqFn extends FloatSeqCol with CustomFn
+trait DoubleSeqFn extends DoubleSeqCol with CustomFn
+trait BigDecimalSeqFn extends BigDecimalSeqCol with CustomFn
+trait TimeSeqFn extends TimeSeqCol with CustomFn
+trait DateSeqFn extends DateSeqCol with CustomFn
+trait TimestampSeqFn extends TimestampSeqCol with CustomFn
+
+trait StringParamsFn extends StringCol with CustomParamsFn
+trait BooleanParamsFn extends BooleanCol with CustomParamsFn
+trait ShortParamsFn extends ShortCol with CustomParamsFn
+trait IntParamsFn extends IntCol with CustomParamsFn
+trait LongParamsFn extends LongCol with CustomParamsFn
+trait FloatParamsFn extends FloatCol with CustomParamsFn
+trait DoubleParamsFn extends DoubleCol with CustomParamsFn
+trait BigDecimalParamsFn extends BigDecimalCol with CustomParamsFn
+trait TimeParamsFn extends TimeCol with CustomParamsFn
+trait DateParamsFn extends DateCol with CustomParamsFn
+trait TimestampParamsFn extends TimestampCol with CustomParamsFn
+trait JsonbParamsFn extends JsonbCol with CustomParamsFn
+trait UUIDParamsFn extends UUIDCol with CustomParamsFn
+trait StringSeqParamsFn extends StringSeqCol with CustomParamsFn
+trait BooleanSeqParamsFn extends BooleanSeqCol with CustomParamsFn
+trait ShortSeqParamsFn extends ShortSeqCol with CustomParamsFn
+trait IntSeqParamsFn extends IntSeqCol with CustomParamsFn
+trait LongSeqParamsFn extends LongSeqCol with CustomParamsFn
+trait FloatSeqParamsFn extends FloatSeqCol with CustomParamsFn
+trait DoubleSeqParamsFn extends DoubleSeqCol with CustomParamsFn
+trait BigDecimalSeqParamsFn extends BigDecimalSeqCol with CustomParamsFn
+trait TimeSeqParamsFn extends TimeSeqCol with CustomParamsFn
+trait DateSeqParamsFn extends DateSeqCol with CustomParamsFn
+trait TimestampSeqParamsFn extends TimestampSeqCol with CustomParamsFn
+
+@deprecated("this trait will be removed", "0.9.5")
+trait StringNoArgsFn extends StringCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait StringArgsFn extends StringCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait BooleanNoArgsFn extends BooleanCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait BooleanArgsFn extends BooleanCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait ShortNoArgsFn extends ShortCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait ShortArgsFn extends ShortCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait IntNoArgsFn extends IntCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait IntArgsFn extends IntCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait LongNoArgsFn extends LongCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait LongArgsFn extends LongCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait FloatNoArgsFn extends FloatCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait FloatArgsFn extends FloatCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait DoubleNoArgsFn extends DoubleCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait DoubleArgsFn extends DoubleCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait BigDecimalNoArgsFn extends BigDecimalCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait BigDecimalArgsFn extends BigDecimalCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait TimeNoArgsFn extends TimeCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait TimeArgsFn extends TimeCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait DateNoArgsFn extends DateCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait DateArgsFn extends DateCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait TimestampNoArgsFn extends TimestampCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait TimestampArgsFn extends TimestampCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait JsonbNoArgsFn extends JsonbCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait JsonbArgsFn extends JsonbCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait UUIDNoArgsFn extends UUIDCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait UUIDArgsFn extends UUIDCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait StringSeqNoArgsFn extends StringSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait StringSeqArgsFn extends StringSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait BooleanSeqNoArgsFn extends BooleanSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait BooleanSeqArgsFn extends BooleanSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait ShortSeqNoArgsFn extends ShortSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait ShortSeqArgsFn extends ShortSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait IntSeqNoArgsFn extends IntSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait IntSeqArgsFn extends IntSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait LongSeqNoArgsFn extends LongSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait LongSeqArgsFn extends LongSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait FloatSeqNoArgsFn extends FloatSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait FloatSeqArgsFn extends FloatSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait DoubleSeqNoArgsFn extends DoubleSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait DoubleSeqArgsFn extends DoubleSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait BigDecimalSeqNoArgsFn extends BigDecimalSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait BigDecimalSeqArgsFn extends BigDecimalSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait TimeSeqNoArgsFn extends TimeSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait TimeSeqArgsFn extends TimeSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait DateSeqNoArgsFn extends DateSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait DateSeqArgsFn extends DateSeqCol with FnArgs
+
+@deprecated("this trait will be removed", "0.9.5")
+trait TimestampSeqNoArgsFn extends TimestampSeqCol with FnColArgs
+@deprecated("this trait will be removed", "0.9.5")
+trait TimestampSeqArgsFn extends TimestampSeqCol with FnArgs
+
