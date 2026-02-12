@@ -1,0 +1,18 @@
+Scala 3 has this capability built-in via the Mirror API—no external library needed.
+scalaimport scala.deriving.Mirror
+
+// Generic given conversion from tuple to any case class
+given tupleToProduct[T <: Product](using m: Mirror.ProductOf[T]): Conversion[m.MirroredElemTypes, T] =
+  m.fromTuple(_)
+Usage:
+scalacase class Person(name: String, age: Int)
+
+val person: Person = ("Kari", 30)  // works with the given in scope
+
+The Mirror.ProductOf approach is the idiomatic Scala 3 way—it uses the compiler-generated mirrors that exist for all case classes. The fromTuple method handles the conversion directly.
+For the reverse direction (case class → tuple), case classes already have .toTuple via Tuple.fromProductTyped:
+
+import scala.Tuple.fromProductTyped
+val tuple: (String, Int) = fromProductTyped(person)
+
+############
