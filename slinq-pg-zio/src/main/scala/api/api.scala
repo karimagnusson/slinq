@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package slinq.pg
+package slinq.pg.zio
 
 import java.sql.SQLException
 
@@ -25,11 +25,14 @@ import slinq.pg.insert.StoredInsert
 import slinq.pg.render.*
 import slinq.pg.run.*
 import slinq.pg.api.conversions
+import slinq.pg.zio.select.{Pages, StreamQuery}
 
-import zio.*
-import zio.stream.{ZStream, ZSink}
+import _root_.zio.*
+import _root_.zio.stream.{ZStream, ZSink}
 
 package object api extends conversions {
+
+  export slinq.pg.api.{Model, sql, Jsonb, PgConfig, SlinqError, SlinqNoRowsException}
 
   // run query
 

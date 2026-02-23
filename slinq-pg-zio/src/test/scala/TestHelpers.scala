@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package slinq.pg.test
+package slinq.pg.zio.test
 
 import com.typesafe.config.ConfigFactory
 import zio.*
-import slinq.pg.api.{SlinqPg, PgConfig}
+import slinq.pg.zio.api.{SlinqPg, PgConfig}
 
 object TestHelpers {
 

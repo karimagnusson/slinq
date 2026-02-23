@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package slinq.pg.test
+package slinq.pg.ec.test
 
 import scala.concurrent.ExecutionContext
 import com.typesafe.config.ConfigFactory
 import com.zaxxer.hikari.HikariConfig
-import slinq.pg.api.db
-import slinq.pg.jdbc.JdbcExecutor
+import slinq.pg.ec.api.db
+import slinq.pg.ec.jdbc.JdbcExecutor
 
 object TestHelpers {
 
+  Class.forName("org.postgresql.Driver")
+
   implicit val ec: ExecutionContext = ExecutionContext.global
+
+  private var initialized = false
 
   def loadConfig: HikariConfig = {
     val config = ConfigFactory.load()
@@ -45,12 +49,15 @@ object TestHelpers {
   }
 
   def initDb(): Unit = {
-    val config = loadConfig
-    val pool = new JdbcExecutor(
-      new com.zaxxer.hikari.HikariDataSource(config),
-      ec
-    )
-    db.init(pool)
+    if (!initialized) {
+      val config = loadConfig
+      val pool = new JdbcExecutor(
+        new com.zaxxer.hikari.HikariDataSource(config),
+        ec
+      )
+      db.init(pool)
+      initialized = true
+    }
   }
 
   def closeDb(): Unit = {

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package slinq.pg.test
+package slinq.pg.ec.test
 
 import scala.concurrent.{Future, Await}
 import scala.concurrent.duration.*
 
-import slinq.pg.api.{*, given}
-import slinq.pg.test.TestHelpers.*
+import slinq.pg.ec.api.{*, given}
+import slinq.pg.ec.test.TestHelpers.*
 import models.*
 
 class PoolPerformanceSpec extends munit.FunSuite {
@@ -29,10 +29,6 @@ class PoolPerformanceSpec extends munit.FunSuite {
 
   override def beforeAll(): Unit = {
     initDb()
-  }
-
-  override def afterAll(): Unit = {
-    closeDb()
   }
 
   test("100 concurrent queries should execute and measure average time") {

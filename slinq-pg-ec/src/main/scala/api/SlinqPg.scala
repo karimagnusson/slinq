@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package slinq.pg.api
+package slinq.pg.ec.api
 
 import scala.concurrent.{Future, ExecutionContext}
 import com.zaxxer.hikari.{HikariDataSource, HikariConfig}
-import slinq.pg.jdbc.JdbcExecutor
+import slinq.pg.ec.jdbc.JdbcExecutor
 import slinq.pg.render.{RenderedQuery, RenderedOperation}
 
 object SlinqPg {

@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package slinq.pg.jdbc
+package slinq.pg.zio.jdbc
 
 import java.sql.DriverManager
 import java.sql.SQLException
 
-import zio.*
+import _root_.zio.*
 
 import slinq.pg.api.PgConfig
+import slinq.pg.jdbc.JdbcMethods
 import slinq.pg.render.{RenderedQuery, RenderedOperation}
 
 class SingleConnection(conf: PgConfig) extends JdbcMethods {

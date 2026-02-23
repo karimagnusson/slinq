@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package slinq.pg.api
+package slinq.pg.zio.api
 
 import java.sql.SQLException
 import slinq.pg.render.{RenderedQuery, RenderedOperation}
 
-import zio.*
+import _root_.zio.*
 
 object db {
 

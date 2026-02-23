@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package slinq.pg.api
+package slinq.pg.ec.api
 
 import scala.concurrent.{Future, ExecutionContext}
 import slinq.pg.render.{RenderedQuery, RenderedOperation}
-import slinq.pg.jdbc.JdbcExecutor
+import slinq.pg.ec.jdbc.JdbcExecutor
 
 object db {
 

@@ -1,7 +1,7 @@
 import java.util.UUID
 import java.sql.Timestamp
-import slinq.pg.api.*
-import slinq.pg.api.given
+import slinq.pg.ec.api.*
+import slinq.pg.ec.api.given
 
 package object models {
 

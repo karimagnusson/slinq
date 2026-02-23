@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package slinq.pg.api
+package slinq.pg.zio.api
 
 import java.sql.SQLException
 import scala.annotation.nowarn
-import slinq.pg.jdbc.SingleConnection
+import slinq.pg.zio.jdbc.SingleConnection
+import slinq.pg.api.{PgConfig, SlinqNoRowsException}
 import slinq.pg.render.{RenderedQuery, RenderedOperation}
 
-import zio.*
+import _root_.zio.*
 
 object SlinqPg {
 

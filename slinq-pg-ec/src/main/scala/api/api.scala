@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package slinq.pg
+package slinq.pg.ec
 
 import scala.concurrent.{Future, ExecutionContext}
 
@@ -26,6 +26,8 @@ import slinq.pg.run.*
 import slinq.pg.api.conversions
 
 package object api extends conversions {
+
+  export slinq.pg.api.{Model, sql, Jsonb, PgConfig, SlinqError, SlinqNoRowsException}
 
   // run query
 

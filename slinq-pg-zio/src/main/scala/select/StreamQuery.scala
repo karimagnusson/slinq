@@ -14,9 +14,9 @@
 * limitations under the License.
 */
 
-package slinq.pg.select
+package slinq.pg.zio.select
 
-import zio.*
+import _root_.zio.*
 
 
 class StreamQuery[T](pages: Pages[T]) {

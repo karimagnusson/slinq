@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package slinq.pg.jdbc
+package slinq.pg.ec.jdbc
 
 import java.sql.Connection
 
 import scala.concurrent.{Future, ExecutionContext}
 
 import com.zaxxer.hikari.HikariDataSource
+import slinq.pg.jdbc.JdbcMethods
 import slinq.pg.render.{RenderedQuery, RenderedOperation}
 
 class SingleConnection(val conn: Connection) extends JdbcMethods

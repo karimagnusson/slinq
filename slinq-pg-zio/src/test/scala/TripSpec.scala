@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package slinq.pg.test
+package slinq.pg.zio.test
 
 import zio.*
 import zio.test.*
 
-import slinq.pg.api.{*, given}
-import slinq.pg.test.TestHelpers.*
+import slinq.pg.zio.api.{*, given}
+import slinq.pg.zio.test.TestHelpers.*
 import models.*
 
 object TripSpec extends ZIOSpecDefault {

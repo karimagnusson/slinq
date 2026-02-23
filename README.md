@@ -1,24 +1,22 @@
-| Discord | Twitter |
-| --- | --- |
-| [![badge-discord](https://img.shields.io/discord/629491597070827530?logo=discord)](https://discord.com/channels/629491597070827530/1063139826636963931) | [![Twitter Follow](https://img.shields.io/twitter/follow/kuzminki_lib?label=follow&style=flat&logo=twitter&color=brightgreen)](https://twitter.com/kuzminki_lib) |
+[![Twitter Follow](https://img.shields.io/twitter/follow/scala_slinq?label=follow&style=flat&logo=twitter&color=brightgreen)](https://twitter.com/scala_slinq)
 
-# Kuzminki
+# Slinq
 
 A PostgreSQL query builder for Scala/ZIO that mirrors SQL structure directly in code.
 
 ```scala
-// available for Scala 2.13 and Scala 3
-libraryDependencies += "io.github.karimagnusson" %% "kuzminki-zio-2" % "0.9.5"
+// available for Scala 3
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.1.0"
 ```
 
-## Why Kuzminki?
+## Why Slinq?
 
-Most query builders abstract SQL behind collection-like APIs. Kuzminki takes the opposite approach: your Scala code reads like the SQL it generates. This makes complex queries readable and the API intuitive - you already know SQL.
+Most query builders abstract SQL behind collection-like APIs. Slinq takes the opposite approach: your Scala code reads like the SQL it generates. This makes complex queries readable and the API intuitive - you already know SQL.
 
 ```scala
 sql
   .select(client)
-  .cols3(_.all)
+  .cols(_.all)
   .where(_.age > 25)
   .orderBy(_.username.asc)
   .limit(5)
@@ -38,13 +36,13 @@ sql
 
 ## Postgres by design
 
-Kuzminki focuses exclusively on PostgreSQL rather than targeting lowest-common-denominator SQL. This allows deep support for Postgres-specific features like JSONB and arrays. Works with Postgres-compatible databases like CockroachDB.
+Slinq focuses exclusively on PostgreSQL rather than targeting lowest-common-denominator SQL. This allows deep support for Postgres-specific features like JSONB and arrays. Works with Postgres-compatible databases like CockroachDB.
 
 ## Example
 
 ```scala
 import zio._
-import kuzminki.api._
+import slinq.api._
 
 object ExampleApp extends ZIOAppDefault {
 
@@ -60,28 +58,28 @@ object ExampleApp extends ZIOAppDefault {
   val job = for {
     _ <- sql
       .insert(client)
-      .cols2(t => (t.username, t.age))
+      .cols(t => (t.username, t.age))
       .values(("Joe", 35))
       .run
-    
+
     _ <- sql
       .update(client)
       .set(_.age ==> 24)
       .where(_.id === 4)
       .run
-    
+
     _ <- sql.delete(client).where(_.id === 7).run
-    
+
     clients <- sql
       .select(client)
-      .cols3(_.all)
+      .cols(_.all)
       .where(_.age > 25)
       .limit(5)
       .run
-    
+
   } yield clients
 
-  val dbLayer = Kuzminki.layer(DbConfig.forDb("company"))
+  val dbLayer = Slinq.layer(DbConfig.forDb("company"))
 
   def run = job.provide(dbLayer)
 }
@@ -89,8 +87,6 @@ object ExampleApp extends ZIOAppDefault {
 
 ## Resources
 
-- [Full documentation](https://kuzminki.kotturinn.com/)
-- [zio-http demo project](https://github.com/karimagnusson/kuzminki-zhttp-demo)
-- [ZIO 1 version](https://github.com/karimagnusson/kuzminki-zio)
+- [Full documentation](https://slinq.kotturinn.com/)
 
 Please report bugs if you find them and feel free to DM me on Twitter if you have any questions.

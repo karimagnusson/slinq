@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package slinq.pg.test
+package slinq.pg.ec.test
 
-import slinq.pg.api.{*, given}
-import slinq.pg.test.TestHelpers.*
+import slinq.pg.ec.api.{*, given}
+import slinq.pg.ec.test.TestHelpers.*
 import models.*
 
 class TripSpec extends munit.FunSuite {
@@ -26,10 +26,6 @@ class TripSpec extends munit.FunSuite {
 
   override def beforeAll(): Unit = {
     initDb()
-  }
-
-  override def afterAll(): Unit = {
-    closeDb()
   }
 
   // Query Rendering Tests
