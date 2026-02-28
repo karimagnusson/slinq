@@ -6,7 +6,7 @@ A PostgreSQL query builder for Scala/ZIO that mirrors SQL structure directly in 
 
 ```scala
 // available for Scala 3
-libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.1.0"
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.9.6-RC1"
 ```
 
 ## Why Slinq?
