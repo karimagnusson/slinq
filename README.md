@@ -4,9 +4,37 @@
 
 A PostgreSQL query builder for Scala/ZIO that mirrors SQL structure directly in code.
 
+## Installation
+
+Slinq is available for Scala 3 via GitHub Packages.
+
+**1. Add the resolver to `build.sbt`:**
+
 ```scala
-// available for Scala 3
+resolvers += "GitHub Packages" at "https://maven.pkg.github.com/karimagnusson/slinq"
+```
+
+**2. Add credentials** (create `~/.sbt/1.0/github.sbt`):
+
+```scala
+credentials += Credentials(
+  "GitHub Package Registry",
+  "maven.pkg.github.com",
+  "YOUR_GITHUB_USERNAME",
+  sys.env.getOrElse("GITHUB_TOKEN", "")
+)
+```
+
+Set `GITHUB_TOKEN` environment variable with a token that has `read:packages` scope.
+
+**3. Add the dependency:**
+
+```scala
+// For ZIO 2
 libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.9.6-RC1"
+
+// For ExecutionContext/Futures (Akka, Pekko, Play)
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-ec" % "0.9.6-RC1"
 ```
 
 ## Why Slinq?
@@ -41,8 +69,9 @@ Slinq focuses exclusively on PostgreSQL rather than targeting lowest-common-deno
 ## Example
 
 ```scala
-import zio._
-import slinq.api._
+import zio.*
+import slinq.pg.zio.api.*
+import slinq.pg.zio.api.given
 
 object ExampleApp extends ZIOAppDefault {
 
