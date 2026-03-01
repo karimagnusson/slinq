@@ -118,8 +118,4 @@ object ExampleApp extends ZIOAppDefault {
 }
 ```
 
-## Resources
-
-- [Full documentation](https://slinq.kotturinn.com/)
-
-Please report bugs if you find them and feel free to DM me on Twitter if you have any questions.
+Please report bugs if you find them.
