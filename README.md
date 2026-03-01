@@ -1,6 +1,6 @@
 # Slinq
 
-A PostgreSQL query builder for Scala/ZIO that mirrors SQL structure directly in code.
+A PostgreSQL query builder for Scala that mirrors SQL structure directly in code.
 
 > *Write queries you can read*
 > *Let the compiler test them*
