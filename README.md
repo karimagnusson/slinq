@@ -6,6 +6,8 @@ A PostgreSQL query builder for Scala/ZIO that mirrors SQL structure directly in 
 > *Let the compiler test them*
 > *Let AI help you write them*
 
+**[Documentation](https://slinq.kotturinn.com/)**
+
 ## Installation
 
 Slinq is available for Scala 3 via GitHub Packages.
