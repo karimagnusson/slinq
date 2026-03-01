@@ -1,8 +1,10 @@
-[![Twitter Follow](https://img.shields.io/twitter/follow/scala_slinq?label=follow&style=flat&logo=twitter&color=brightgreen)](https://twitter.com/scala_slinq)
-
 # Slinq
 
 A PostgreSQL query builder for Scala/ZIO that mirrors SQL structure directly in code.
+
+> *Write queries you can read*
+> *Let the compiler test them*
+> *Let AI help you write them*
 
 ## Installation
 
