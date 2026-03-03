@@ -27,7 +27,7 @@ import slinq.pg.api.conversions
 
 package object api extends conversions {
 
-  export slinq.pg.api.{Model, sql, Jsonb, PgConfig, SlinqError, SlinqNoRowsException}
+  export slinq.pg.api.{Model, sql, Jsonb, PgConfig, SlinqError, SlinqNoRowsException, Arg, ArgSeq}
 
   // run query
 

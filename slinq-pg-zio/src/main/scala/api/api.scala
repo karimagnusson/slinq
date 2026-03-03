@@ -21,7 +21,7 @@ import java.sql.SQLException
 import slinq.pg.select.*
 import slinq.pg.update.{StoredUpdate, StoredUpdateReturning}
 import slinq.pg.delete.StoredDelete
-import slinq.pg.insert.StoredInsert
+import slinq.pg.insert.{StoredInsert, StoredInsertReturningTyped}
 import slinq.pg.render.*
 import slinq.pg.run.*
 import slinq.pg.api.conversions
@@ -32,7 +32,7 @@ import _root_.zio.stream.{ZStream, ZSink}
 
 package object api extends conversions {
 
-  export slinq.pg.api.{Model, sql, Jsonb, PgConfig, SlinqError, SlinqNoRowsException}
+  export slinq.pg.api.{Model, sql, Jsonb, PgConfig, SlinqError, SlinqNoRowsException, Arg, ArgSeq}
 
   // run query
 
