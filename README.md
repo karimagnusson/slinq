@@ -35,10 +35,10 @@ Set `GITHUB_TOKEN` environment variable with a token that has `read:packages` sc
 
 ```scala
 // For ZIO 2
-libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.9.6-RC1"
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.9.6-RC2"
 
 // For ExecutionContext/Futures (Akka, Pekko, Play)
-libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-ec" % "0.9.6-RC1"
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-ec" % "0.9.6-RC2"
 ```
 
 ## Why Slinq?
