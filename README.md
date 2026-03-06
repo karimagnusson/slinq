@@ -6,7 +6,7 @@ A PostgreSQL query builder for Scala that mirrors SQL structure directly in code
 > *Let the compiler test them*
 > *Let AI help you write them*
 
-**[Documentation](https://slinq.kotturinn.com/)**
+**[Documentation](https://slinq.kotturinn.com/)** · **[ZIO HTTP Demo](https://github.com/karimagnusson/slinq-zio-http-demo)**
 
 ## Installation
 
