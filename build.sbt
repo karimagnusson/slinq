@@ -39,7 +39,7 @@ lazy val commonScalacOptions = Seq(
 )
 
 lazy val root = (project in file("."))
-  .aggregate(slinqPg, slinqPgZio, slinqPgEc)
+  .aggregate(slinqPg, slinqPgZio, slinqPgEc, slinqPgTypelevel)
   .settings(
     name := "slinq",
     publish / skip := true
@@ -80,6 +80,21 @@ lazy val slinqPgEc = (project in file("slinq-pg-ec"))
       "org.postgresql" % "postgresql" % "42.7.3",
       "com.typesafe"  % "config"      % "1.4.3"  % Test,
       "org.scalameta" %% "munit"      % "1.0.0"  % Test
+    ),
+    Compile / scalacOptions ++= commonScalacOptions
+  )
+
+lazy val slinqPgTypelevel = (project in file("slinq-pg-typelevel"))
+  .dependsOn(slinqPg)
+  .settings(
+    name := "slinq-pg-typelevel",
+    libraryDependencies ++= Seq(
+      "org.typelevel"  %% "cats-effect" % "3.5.7",
+      "co.fs2"         %% "fs2-core"    % "3.11.0",
+      "com.zaxxer"      % "HikariCP"    % "7.0.2",
+      "org.postgresql"  % "postgresql"  % "42.7.3",
+      "com.typesafe"    % "config"      % "1.4.3"  % Test,
+      "org.scalameta"  %% "munit"       % "1.0.0"  % Test
     ),
     Compile / scalacOptions ++= commonScalacOptions
   )
