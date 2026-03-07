@@ -39,7 +39,7 @@ lazy val commonScalacOptions = Seq(
 )
 
 lazy val root = (project in file("."))
-  .aggregate(slinqPg, slinqPgZio, slinqPgEc)
+  .aggregate(slinqPg, slinqPgZio, slinqPgEc, slinqPgPekko)
   .settings(
     name := "slinq",
     publish / skip := true
@@ -80,6 +80,21 @@ lazy val slinqPgEc = (project in file("slinq-pg-ec"))
       "org.postgresql" % "postgresql" % "42.7.3",
       "com.typesafe"  % "config"      % "1.4.3"  % Test,
       "org.scalameta" %% "munit"      % "1.0.0"  % Test
+    ),
+    Compile / scalacOptions ++= commonScalacOptions
+  )
+
+lazy val slinqPgPekko = (project in file("slinq-pg-pekko"))
+  .dependsOn(slinqPg)
+  .settings(
+    name := "slinq-pg-pekko",
+    libraryDependencies ++= Seq(
+      "org.apache.pekko" %% "pekko-actor"  % "1.1.3",
+      "org.apache.pekko" %% "pekko-stream" % "1.1.3",
+      "com.zaxxer"        % "HikariCP"     % "7.0.2",
+      "org.postgresql"    % "postgresql"   % "42.7.3",
+      "com.typesafe"      % "config"       % "1.4.3"  % Test,
+      "org.scalameta"    %% "munit"        % "1.0.0"  % Test
     ),
     Compile / scalacOptions ++= commonScalacOptions
   )
