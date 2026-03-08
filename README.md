@@ -6,7 +6,7 @@ A PostgreSQL query builder for Scala that mirrors SQL structure directly in code
 > *Let the compiler test them*
 > *Let AI help you write them*
 
-**[Documentation](https://slinq.kotturinn.com/)** · **[ZIO HTTP Demo](https://github.com/karimagnusson/slinq-zio-http-demo)**
+**[Documentation](https://slinq.kotturinn.com/)** · **[ZIO HTTP Demo](https://github.com/karimagnusson/slinq-zio-http-demo)** · **[http4s Demo](https://github.com/karimagnusson/slinq-http4s-demo)** · **[Play Demo](https://github.com/karimagnusson/slinq-play-demo)**
 
 ## Installation
 
@@ -35,10 +35,16 @@ Set `GITHUB_TOKEN` environment variable with a token that has `read:packages` sc
 
 ```scala
 // For ZIO 2
-libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.9.6-RC2"
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-zio" % "0.9.6-RC3"
 
 // For ExecutionContext/Futures (Akka, Pekko, Play)
-libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-ec" % "0.9.6-RC2"
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-ec" % "0.9.6-RC3"
+
+// For Pekko (with Pekko Streams support)
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-pekko" % "0.9.6-RC3"
+
+// For Cats Effect 3 / fs2
+libraryDependencies += "io.github.karimagnusson" %% "slinq-pg-typelevel" % "0.9.6-RC3"
 ```
 
 ## Why Slinq?
@@ -55,9 +61,22 @@ sql
   .run
 ```
 
+## Modules
+
+| Module | Effect Type | Streaming | Use With |
+|--------|------------|-----------|----------|
+| `slinq-pg-zio` | `ZIO` | ZIO Streams | ZIO 2 applications |
+| `slinq-pg-ec` | `Future` | — | Akka, Pekko, Play |
+| `slinq-pg-pekko` | `Future` | Pekko Streams (Source/Sink) | Apache Pekko |
+| `slinq-pg-typelevel` | `IO` | fs2 (Stream/Pipe) | Cats Effect 3 / http4s |
+
+For Play Framework integration, see [slinq-play](https://github.com/karimagnusson/slinq-play).
+
 ## Features
 
 - Native ZIO integration as a layer
+- Cats Effect 3 and fs2 streaming support
+- Pekko Streams support (Source/Sink)
 - Full JSONB support - query, update, and return rows as JSON
 - Array field operations
 - Subqueries in WHERE clauses and SELECT columns

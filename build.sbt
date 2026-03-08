@@ -14,7 +14,7 @@ inThisBuild(
   )
 )
 
-ThisBuild / version       := "0.9.6-RC2"
+ThisBuild / version       := "0.9.6-RC3"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / scalaVersion  := "3.3.7"
 
@@ -39,7 +39,7 @@ lazy val commonScalacOptions = Seq(
 )
 
 lazy val root = (project in file("."))
-  .aggregate(slinqPg, slinqPgZio, slinqPgEc, slinqPgPekko)
+  .aggregate(slinqPg, slinqPgZio, slinqPgEc, slinqPgPekko, slinqPgTypelevel)
   .settings(
     name := "slinq",
     publish / skip := true
@@ -89,12 +89,27 @@ lazy val slinqPgPekko = (project in file("slinq-pg-pekko"))
   .settings(
     name := "slinq-pg-pekko",
     libraryDependencies ++= Seq(
-      "org.apache.pekko" %% "pekko-actor"  % "1.1.3",
-      "org.apache.pekko" %% "pekko-stream" % "1.1.3",
+      "org.apache.pekko" %% "pekko-actor"  % "1.0.3",
+      "org.apache.pekko" %% "pekko-stream" % "1.0.3",
       "com.zaxxer"        % "HikariCP"     % "7.0.2",
       "org.postgresql"    % "postgresql"   % "42.7.3",
       "com.typesafe"      % "config"       % "1.4.3"  % Test,
       "org.scalameta"    %% "munit"        % "1.0.0"  % Test
+    ),
+    Compile / scalacOptions ++= commonScalacOptions
+  )
+
+lazy val slinqPgTypelevel = (project in file("slinq-pg-typelevel"))
+  .dependsOn(slinqPg)
+  .settings(
+    name := "slinq-pg-typelevel",
+    libraryDependencies ++= Seq(
+      "org.typelevel"  %% "cats-effect" % "3.5.7",
+      "co.fs2"         %% "fs2-core"    % "3.11.0",
+      "com.zaxxer"      % "HikariCP"    % "7.0.2",
+      "org.postgresql"  % "postgresql"  % "42.7.3",
+      "com.typesafe"    % "config"      % "1.4.3"  % Test,
+      "org.scalameta"  %% "munit"       % "1.0.0"  % Test
     ),
     Compile / scalacOptions ++= commonScalacOptions
   )
